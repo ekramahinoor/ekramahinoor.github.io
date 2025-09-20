@@ -159,31 +159,6 @@
           </tr>
         </table>
 
-        <!-- Talks -->
-        <table style="width:100%;margin:auto;border-spacing:0;">
-          <tr>
-            <td style="padding:20px;vertical-align:top;">
-              <h2>Selected Talks / Lectures</h2>
-
-              {% for post in site.posts %}
-                {% if post.categories contains 'talks' %}
-                  <p>
-                    {% if post.project_page %}<a href="{{ post.project_page }}"><strong>{{ post.title }}</strong></a>{% else %}<strong>{{ post.title }}</strong>{% endif %}
-                    <br>
-                    <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
-                    {% if post.accolade %}<strong style="color:#ff0000;"> ({{ post.accolade }})</strong>{% endif %}
-                    <br>
-                    {% if post.project_page %}<a href="{{ post.project_page }}">project page</a> / {% endif %}
-                    {% if post.paper %}<a href="{{ post.paper }}">paper</a> / {% endif %}
-                    {% if post.arxiv %}<a href="{{ post.arxiv }}">arXiv</a> / {% endif %}
-                    {% if post.slides %}<a href="{{ post.slides }}">slides</a> / {% endif %}
-                    <p>{{ post.excerpt }}</p>
-                  </p>
-                {% endif %}
-              {% endfor %}
-            </td>
-          </tr>
-        </table>
 
         <!-- Footer -->
         <table style="width:100%;margin:auto;border-spacing:0;">
