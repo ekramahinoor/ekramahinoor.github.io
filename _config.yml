@@ -6,20 +6,20 @@ avatar: images/cropped_image.png
 footer-links:
   email: ekramahinoor@gmail.com
   linkedin: https://www.linkedin.com/in/mahinoorekram/
-  pinterest: null
-  rss: null
-  twitter: null
-  stackoverflow: null
-  youtube: null
-  googleplus: null
+  pinterest: 
+  rss: 
+  twitter: 
+  stackoverflow: 
+  youtube: 
+  googleplus: 
 
 # Disqus & Google Analytics
-disqus: null
-google_analytics: null
+disqus:
+google_analytics: 
 
 # Site URL (GitHub Pages)
 url: "https://ekramahinoor.github.io"
-baseurl: ""  # since this is a user site, no baseurl needed
+
 
 # Permalink
 permalink: /
@@ -40,7 +40,7 @@ sass:
 
 # Plugins
 plugins:
-  - jekyll-sitemap
+      - jekyll-sitemap
   # - jekyll-feed
 
 # Files to exclude from build
