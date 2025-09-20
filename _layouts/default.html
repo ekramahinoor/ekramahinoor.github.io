@@ -48,13 +48,49 @@
               <p style="text-align:center">
                 <a target="_blank" href="mailto:ekramahinoor@gmail.com">Email</a> &nbsp;/&nbsp;
                 <a href="https://www.linkedin.com/in/mahinoorekram/">LinkedIn</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com">Google Scholar</a>
+                <a href="https://scholar.google.com/citations?user=rNWlkwIAAAAJ&hl=en">Google Scholar</a>
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/profile.jpg">
+              <img style="width:100%;max-width:100%" alt="profile photo" src="images/cropped_image.png">
             </td>
           </tr>
+        </table>
+
+
+<!-- Scrollbar code adapted from https://github.com/kkhetarpal/kkhetarpal.github.io/blob/master/index.html#L200 -->
+        <!-- TODO: should be dynamically generated from markdown files -->
+        <table
+          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tbody>
+            <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <h2>Highlights / News</h2>
+                <div class="container sidebar col-md-3">
+                  <div class="panel-group">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <!-- <h4 class="panel-title"></h4> -->
+                      </div>
+                      <div class="panel-body" id="oScroll">
+                        <div id="scroll">
+                          {% for post in site.posts %}
+                          {% for cat in post.categories %}
+                          {% if cat == 'news' %}
+
+                          <p>
+                            <strong>{{ post.date | date: "%b %d, %Y" }}</strong>: {{ post.excerpt }}
+                          </p>
+                          {% endif %}
+                          {% endfor %}
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+
+              </td>
+            </tr>
+          </tbody>
         </table>
 
         <!-- Research -->
@@ -95,7 +131,7 @@
         <table style="width:100%;margin:auto;border-spacing:0px;">
           <tr>
             <td style="padding:2.5%;width:25%;min-width:120px;vertical-align:middle">
-              <img src="images/ozone_threads.jpg" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+              <img src="images/ozone_threads.png" alt="project image" style="width:auto; height:auto; max-width:100%;" />
             </td>
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>Ozone Threads: Unveiling the Global Tapestry of Climate, Health, and Policy Interests</h3>
