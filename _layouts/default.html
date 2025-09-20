@@ -14,6 +14,7 @@
   <meta charset="utf-8">
   <meta name="author" content="Mahinoor Ekram">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mahinoor Ekram – MPhil student in Peace and Conflict Studies, UiT Norway. Research in humanitarian action, environmental policy, and climate justice.">
 
   <title>Mahinoor Ekram</title>
 
@@ -41,13 +42,12 @@
                 I am an <b>MPhil student in Peace and Conflict Studies</b> at 
                 <a href="https://en.uit.no/">UiT – The Arctic University of Norway</a>. 
                 I hold a <b>BSc in Environmental Science and Management</b> from 
-                <a href="https://www.northsouth.edu/">North South University</a>, where I graduated 
+                <a href="https://www.northsouth.edu/">North South University</a>, graduating 
                 <em>Summa Cum Laude</em> with a CGPA of 3.83/4.00.
               </p>
               <p>
-                My work lies at the intersection of <b>humanitarian action, environmental policy, and climate justice</b>, 
-                with research interests in sustainable resource management, conflict resolution, and equitable solutions 
-                for vulnerable communities.
+                My research lies at the intersection of <b>humanitarian action, environmental policy, and climate justice</b>, 
+                with interests in sustainable resource management, conflict resolution, and equitable solutions for vulnerable communities.
               </p>
               <p style="text-align:center;">
                 <a href="mailto:ekramahinoor@gmail.com" target="_blank">Email</a> &nbsp;/&nbsp;
@@ -82,23 +82,39 @@
         <!-- Research -->
         <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;vertical-align:top;">
+            <td style="padding:20px;vertical-align:top;">
               <h2>Research</h2>
               <p>My research interests include environmental governance, sustainable resource management, and peacebuilding in the context of climate change.</p>
-            </td>
-          </tr>
-        </table>
 
-        <table style="width:100%;margin:auto;border-spacing:0;">
-          <tr>
-            <td style="padding:2.5%;width:25%;min-width:120px;vertical-align:top;">
-              <img src="{{ site.baseurl }}/images/water_atlas.jpg" alt="project image" style="width:auto; max-width:100%;">
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:top;">
-              <h3>Developing a Safe Water Atlas for Sustainable Drinking Water Supply in Sonargaon Upazila, Bangladesh</h3>
-              <em>Groundwater for Sustainable Development, 2024</em>
-              <br><a href="https://doi.org/10.1016/j.gsd.2024.101126">paper</a>
-              <p>This work focuses on mapping safe water access for communities in Sonargaon to improve sustainable resource allocation.</p>
+              {% for post in site.posts %}
+                {% if post.categories contains 'research' %}
+                <table style="width:100%;margin:auto;border-spacing:0;">
+                  <tr>
+                    <td style="padding:2.5%;width:25%;min-width:120px;vertical-align:top;">
+                      <img src="{{ post.image }}" alt="project image" style="width:auto; max-width:100%;">
+                    </td>
+                    <td style="padding:2.5%;width:75%;vertical-align:top;">
+                      {% if post.project_page %}
+                        <a href="{{ post.project_page }}"><strong>{{ post.title }}</strong></a>
+                      {% else %}
+                        <strong>{{ post.title }}</strong>
+                      {% endif %}
+                      <br>
+                      {{ post.authors }}
+                      <br>
+                      <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+                      {% if post.accolade %}<strong style="color:#ff0000;"> ({{ post.accolade }})</strong>{% endif %}
+                      <br>
+                      {% if post.project_page %}<a href="{{ post.project_page }}">project page</a> / {% endif %}
+                      {% if post.paper %}<a href="{{ post.paper }}">paper</a> / {% endif %}
+                      {% if post.arxiv %}<a href="{{ post.arxiv }}">arXiv</a> / {% endif %}
+                      {% if post.slides %}<a href="{{ post.slides }}">slides</a> / {% endif %}
+                      <p>{{ post.excerpt }}</p>
+                    </td>
+                  </tr>
+                </table>
+                {% endif %}
+              {% endfor %}
             </td>
           </tr>
         </table>
@@ -106,87 +122,65 @@
         <!-- Projects -->
         <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;vertical-align:top;">
+            <td style="padding:20px;vertical-align:top;">
               <h2>Projects</h2>
-              <p>Some selected projects and works-in-progress:</p>
+              <p>Selected projects and works-in-progress:</p>
+
+              {% for post in site.posts %}
+                {% if post.categories contains 'project' %}
+                <table style="width:100%;margin:auto;border-spacing:0;">
+                  <tr>
+                    <td style="padding:2.5%;width:25%;min-width:120px;vertical-align:top;">
+                      <img src="{{ post.image }}" alt="project image" style="width:auto; max-width:100%;">
+                    </td>
+                    <td style="padding:2.5%;width:75%;vertical-align:top;">
+                      {% if post.project_page %}
+                        <a href="{{ post.project_page }}"><strong>{{ post.title }}</strong></a>
+                      {% else %}
+                        <strong>{{ post.title }}</strong>
+                      {% endif %}
+                      <br>
+                      {{ post.authors }}
+                      <br>
+                      <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+                      {% if post.accolade %}<strong style="color:#ff0000;"> ({{ post.accolade }})</strong>{% endif %}
+                      <br>
+                      {% if post.project_page %}<a href="{{ post.project_page }}">project page</a> / {% endif %}
+                      {% if post.paper %}<a href="{{ post.paper }}">paper</a> / {% endif %}
+                      {% if post.arxiv %}<a href="{{ post.arxiv }}">arXiv</a> / {% endif %}
+                      {% if post.slides %}<a href="{{ post.slides }}">slides</a> / {% endif %}
+                      <p>{{ post.excerpt }}</p>
+                    </td>
+                  </tr>
+                </table>
+                {% endif %}
+              {% endfor %}
             </td>
           </tr>
         </table>
 
+        <!-- Talks -->
         <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;width:25%;min-width:120px;vertical-align:top;">
-              <img src="{{ site.baseurl }}/images/ozone_threads.png" alt="project image" style="width:auto; max-width:100%;">
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:top;">
-              <h3>Ozone Threads: Unveiling the Global Tapestry of Climate, Health, and Policy Interests</h3>
-              <em>Under Review</em>
-              <p>Contributed to literature review, data analysis, and manuscript preparation for this interdisciplinary climate and policy project.</p>
-            </td>
-          </tr>
-        </table>
+            <td style="padding:20px;vertical-align:top;">
+              <h2>Selected Talks / Lectures</h2>
 
-        <!-- Work Experience -->
-        <table style="width:100%;margin:auto;border-spacing:0;">
-          <tr>
-            <td style="padding:2.5%;vertical-align:top;">
-              <h2>Work Experience</h2>
-            </td>
-          </tr>
-        </table>
-
-        <!-- Work Experience Entries -->
-        <table style="width:100%;margin:auto;border-spacing:0;">
-          <tr>
-            <td style="padding:2.5%;vertical-align:top;">
-              <h3>Faculty, Environmental Management – Chittagong Grammar School Dhaka</h3>
-              <em>09/2024 – Present | Dhaka, Bangladesh</em>
-              <p>Teaching Environmental Science (Grades 8–10), adapting lessons for diverse learning needs, and promoting student engagement in environmental issues.</p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:2.5%;vertical-align:top;">
-              <h3>Graduate Teaching Assistant – North South University (DESM)</h3>
-              <em>08/2024 – 09/2024 | Dhaka, Bangladesh</em>
-              <p>Conducted tutorials in Environmental Health, Urban Environmental Management, and assisted with grading and course support.</p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:2.5%;vertical-align:top;">
-              <h3>Undergraduate Teaching Assistant – North South University (DESM)</h3>
-              <em>02/2023 – 06/2024 | Dhaka, Bangladesh</em>
-              <p>Led tutorials in Environmental Health, Soil Science, Disaster Management; graded coursework and provided exam support.</p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:2.5%;vertical-align:top;">
-              <h3>Intern – FASTRACK Certification Services Bangladesh</h3>
-              <em>11/2023 – 02/2024 | Dhaka, Bangladesh</em>
-              <p>Assisted with Environmental Impact Assessments (EIAs), gained knowledge of ISO standards, and supported compliance reporting.</p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:2.5%;vertical-align:top;">
-              <h3>Summer Intern – South Asian Institute of Policy and Governance (SIPG), NSU</h3>
-              <em>06/2025 – 09/2025 | Dhaka, Bangladesh</em>
-              <p>Conducted literature reviews, data collection, and drafted reports on governance and environmental policy.</p>
-            </td>
-          </tr>
-        </table>
-
-        <!-- Education -->
-        <table style="width:100%;margin:auto;border-spacing:0;">
-          <tr>
-            <td style="padding:2.5%;vertical-align:top;">
-              <h2>Education</h2>
-              <p><b>UiT – The Arctic University of Norway</b>, Tromsø, Norway <br>
-              MPhil in Peace and Conflict Studies (2025 – Present)</p>
-              <p><b>North South University</b>, Dhaka, Bangladesh <br>
-              BSc in Environmental Science and Management (2020 – 2024) | CGPA: 3.83/4.00, <em>Summa Cum Laude</em></p>
-              <p><b>Shaheed Bir Uttam Lt Anwar Girls’ College</b>, Dhaka <br>
-              HSC, 2019 | GPA: 4.50/5.00</p>
-              <p><b>Milestone School and College</b>, Dhaka <br>
-              SSC, 2017 | GPA: 5.00/5.00</p>
+              {% for post in site.posts %}
+                {% if post.categories contains 'talks' %}
+                  <p>
+                    {% if post.project_page %}<a href="{{ post.project_page }}"><strong>{{ post.title }}</strong></a>{% else %}<strong>{{ post.title }}</strong>{% endif %}
+                    <br>
+                    <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+                    {% if post.accolade %}<strong style="color:#ff0000;"> ({{ post.accolade }})</strong>{% endif %}
+                    <br>
+                    {% if post.project_page %}<a href="{{ post.project_page }}">project page</a> / {% endif %}
+                    {% if post.paper %}<a href="{{ post.paper }}">paper</a> / {% endif %}
+                    {% if post.arxiv %}<a href="{{ post.arxiv }}">arXiv</a> / {% endif %}
+                    {% if post.slides %}<a href="{{ post.slides }}">slides</a> / {% endif %}
+                    <p>{{ post.excerpt }}</p>
+                  </p>
+                {% endif %}
+              {% endfor %}
             </td>
           </tr>
         </table>
