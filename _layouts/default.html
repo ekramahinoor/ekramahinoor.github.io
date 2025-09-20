@@ -8,30 +8,34 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-E00L9PT3V9');
   </script>
-  <title>Mahinoor Ekram</title>
 
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-
-  <meta name="author" content="Mahinoor Ekram" />
+  <meta charset="utf-8">
+  <meta name="author" content="Mahinoor Ekram">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <title>Mahinoor Ekram</title>
 
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet">
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;margin:auto;">
+  <table style="width:100%;max-width:800px;margin:auto;border-spacing:0;">
     <tr>
       <td>
+
         <!-- Header -->
-        <table style="width:100%;margin:auto;border-spacing:0px;">
+        <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;width:60%;vertical-align:middle">
+            <td style="padding:2.5%;width:60%;vertical-align:middle;">
               <h1>Mahinoor Ekram</h1>
               <p>
                 I am an <b>MPhil student in Peace and Conflict Studies</b> at 
@@ -45,143 +49,124 @@
                 with research interests in sustainable resource management, conflict resolution, and equitable solutions 
                 for vulnerable communities.
               </p>
-              <p style="text-align:center">
-                <a target="_blank" href="mailto:ekramahinoor@gmail.com">Email</a> &nbsp;/&nbsp;
-                <a href="https://www.linkedin.com/in/mahinoorekram/">LinkedIn</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com/citations?user=rNWlkwIAAAAJ&hl=en">Google Scholar</a>
+              <p style="text-align:center;">
+                <a href="mailto:ekramahinoor@gmail.com" target="_blank">Email</a> &nbsp;/&nbsp;
+                <a href="https://www.linkedin.com/in/mahinoorekram/" target="_blank">LinkedIn</a> &nbsp;/&nbsp;
+                <a href="https://scholar.google.com/citations?user=rNWlkwIAAAAJ&hl=en" target="_blank">Google Scholar</a>
               </p>
             </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/cropped_image.png">
+            <td style="padding:2.5%;width:40%;max-width:40%;">
+              <img src="{{ site.baseurl }}/images/cropped_image.png" alt="profile photo" style="width:100%;max-width:100%;">
             </td>
           </tr>
         </table>
 
-
-<!-- Scrollbar code adapted from https://github.com/kkhetarpal/kkhetarpal.github.io/blob/master/index.html#L200 -->
-        <!-- TODO: should be dynamically generated from markdown files -->
-        <table
-          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tbody>
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Highlights / News</h2>
-                <div class="container sidebar col-md-3">
-                  <div class="panel-group">
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <!-- <h4 class="panel-title"></h4> -->
-                      </div>
-                      <div class="panel-body" id="oScroll">
-                        <div id="scroll">
-                          {% for post in site.posts %}
-                          {% for cat in post.categories %}
-                          {% if cat == 'news' %}
-
-                          <p>
-                            <strong>{{ post.date | date: "%b %d, %Y" }}</strong>: {{ post.excerpt }}
-                          </p>
-                          {% endif %}
-                          {% endfor %}
-                          {% endfor %}
-                        </div>
-                      </div>
-                    </div>
-
-              </td>
-            </tr>
-          </tbody>
+        <!-- Highlights / News -->
+        <table style="width:100%;margin:auto;border-spacing:0;">
+          <tr>
+            <td style="padding:20px;vertical-align:top;">
+              <h2>Highlights / News</h2>
+              <div id="scroll">
+                {% for post in site.posts %}
+                  {% if post.categories contains 'news' %}
+                    <p>
+                      <strong>{{ post.date | date: "%b %d, %Y" }}</strong>: {{ post.excerpt }}
+                    </p>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </td>
+          </tr>
         </table>
 
         <!-- Research -->
-        <table style="width:100%;margin:auto;border-spacing:0px;">
+        <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;vertical-align:middle">
+            <td style="padding:2.5%;vertical-align:top;">
               <h2>Research</h2>
               <p>My research interests include environmental governance, sustainable resource management, and peacebuilding in the context of climate change.</p>
             </td>
           </tr>
         </table>
-        <table style="width:100%;margin:auto;border-spacing:0px;">
+
+        <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;width:25%;min-width:120px;vertical-align:middle">
-              <img src="images/water_atlas.jpg" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+            <td style="padding:2.5%;width:25%;min-width:120px;vertical-align:top;">
+              <img src="{{ site.baseurl }}/images/water_atlas.jpg" alt="project image" style="width:auto; max-width:100%;">
             </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
+            <td style="padding:2.5%;width:75%;vertical-align:top;">
               <h3>Developing a Safe Water Atlas for Sustainable Drinking Water Supply in Sonargaon Upazila, Bangladesh</h3>
-              <br>
-              <em>Groundwater for Sustainable Development</em>, 2024
-              <br>
-              <a href="https://doi.org/10.1016/j.gsd.2024.101126">paper</a>
-              <p></p>
-              This work focuses on mapping safe water access for communities in Sonargaon to improve sustainable resource allocation.
+              <em>Groundwater for Sustainable Development, 2024</em>
+              <br><a href="https://doi.org/10.1016/j.gsd.2024.101126">paper</a>
+              <p>This work focuses on mapping safe water access for communities in Sonargaon to improve sustainable resource allocation.</p>
             </td>
           </tr>
         </table>
 
         <!-- Projects -->
-        <table style="width:100%;margin:auto;border-spacing:0px;">
+        <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;vertical-align:middle">
+            <td style="padding:2.5%;vertical-align:top;">
               <h2>Projects</h2>
               <p>Some selected projects and works-in-progress:</p>
             </td>
           </tr>
         </table>
-        <table style="width:100%;margin:auto;border-spacing:0px;">
+
+        <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;width:25%;min-width:120px;vertical-align:middle">
-              <img src="images/ozone_threads.png" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+            <td style="padding:2.5%;width:25%;min-width:120px;vertical-align:top;">
+              <img src="{{ site.baseurl }}/images/ozone_threads.png" alt="project image" style="width:auto; max-width:100%;">
             </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
+            <td style="padding:2.5%;width:75%;vertical-align:top;">
               <h3>Ozone Threads: Unveiling the Global Tapestry of Climate, Health, and Policy Interests</h3>
-              <br>
               <em>Under Review</em>
-              <p></p>
-              Contributed to literature review, data analysis, and manuscript preparation for this interdisciplinary climate and policy project.
+              <p>Contributed to literature review, data analysis, and manuscript preparation for this interdisciplinary climate and policy project.</p>
             </td>
           </tr>
         </table>
 
         <!-- Work Experience -->
-        <table style="width:100%;margin:auto;border-spacing:0px;">
+        <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;vertical-align:middle">
+            <td style="padding:2.5%;vertical-align:top;">
               <h2>Work Experience</h2>
             </td>
           </tr>
         </table>
-        <table style="width:100%;margin:auto;border-spacing:0px;">
+
+        <!-- Work Experience Entries -->
+        <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;vertical-align:middle">
+            <td style="padding:2.5%;vertical-align:top;">
               <h3>Faculty, Environmental Management – Chittagong Grammar School Dhaka</h3>
               <em>09/2024 – Present | Dhaka, Bangladesh</em>
               <p>Teaching Environmental Science (Grades 8–10), adapting lessons for diverse learning needs, and promoting student engagement in environmental issues.</p>
             </td>
           </tr>
           <tr>
-            <td style="padding:2.5%;vertical-align:middle">
+            <td style="padding:2.5%;vertical-align:top;">
               <h3>Graduate Teaching Assistant – North South University (DESM)</h3>
               <em>08/2024 – 09/2024 | Dhaka, Bangladesh</em>
               <p>Conducted tutorials in Environmental Health, Urban Environmental Management, and assisted with grading and course support.</p>
             </td>
           </tr>
           <tr>
-            <td style="padding:2.5%;vertical-align:middle">
+            <td style="padding:2.5%;vertical-align:top;">
               <h3>Undergraduate Teaching Assistant – North South University (DESM)</h3>
               <em>02/2023 – 06/2024 | Dhaka, Bangladesh</em>
               <p>Led tutorials in Environmental Health, Soil Science, Disaster Management; graded coursework and provided exam support.</p>
             </td>
           </tr>
           <tr>
-            <td style="padding:2.5%;vertical-align:middle">
+            <td style="padding:2.5%;vertical-align:top;">
               <h3>Intern – FASTRACK Certification Services Bangladesh</h3>
               <em>11/2023 – 02/2024 | Dhaka, Bangladesh</em>
               <p>Assisted with Environmental Impact Assessments (EIAs), gained knowledge of ISO standards, and supported compliance reporting.</p>
             </td>
           </tr>
           <tr>
-            <td style="padding:2.5%;vertical-align:middle">
+            <td style="padding:2.5%;vertical-align:top;">
               <h3>Summer Intern – South Asian Institute of Policy and Governance (SIPG), NSU</h3>
               <em>06/2025 – 09/2025 | Dhaka, Bangladesh</em>
               <p>Conducted literature reviews, data collection, and drafted reports on governance and environmental policy.</p>
@@ -190,9 +175,9 @@
         </table>
 
         <!-- Education -->
-        <table style="width:100%;margin:auto;border-spacing:0px;">
+        <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
-            <td style="padding:2.5%;vertical-align:middle">
+            <td style="padding:2.5%;vertical-align:top;">
               <h2>Education</h2>
               <p><b>UiT – The Arctic University of Norway</b>, Tromsø, Norway <br>
               MPhil in Peace and Conflict Studies (2025 – Present)</p>
@@ -207,16 +192,16 @@
         </table>
 
         <!-- Footer -->
-        <table style="width:100%;margin:auto;border-spacing:0px;">
+        <table style="width:100%;margin:auto;border-spacing:0;">
           <tr>
             <td>
-              <br>
               <p style="text-align:center;font-size:small;">
                 Design adapted from <a href="https://jonbarron.info">Jon Barron's website</a>
               </p>
             </td>
           </tr>
         </table>
+
       </td>
     </tr>
   </table>
